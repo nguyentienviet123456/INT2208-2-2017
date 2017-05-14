@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ChangeprofileComponent } from './changeprofile/changeprofile.component';
 import { SearchingAndExploreComponent } from './searching-and-explore/searching-and-explore.component';
 import { PostComponent } from './post/post.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PostComponent } from './post/post.component';
     ProfileComponent,
     ChangeprofileComponent,
     SearchingAndExploreComponent,
-    PostComponent
+    PostComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,10 @@ import { PostComponent } from './post/post.component';
       {
         path: 'post',
         component: PostComponent
+      },
+       {
+        path: 'register',
+        component: RegisterComponent
       }
     ])
   ],

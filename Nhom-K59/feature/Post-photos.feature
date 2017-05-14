@@ -5,8 +5,8 @@ Feature: Post Photos
 	So that i can chose photos and post them
 
 		Scenario: Post
-		Given the user is at the homepage
-		When user choose to post photos
-		And user choose from their folder
-		And user submit
-		Then their photos were posted
+			Given the user is at the homepage
+			When user choose to post photos
+			And user choose from their folder
+			And user submit
+			Then their photos were posted

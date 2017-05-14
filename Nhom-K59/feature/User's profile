@@ -1,8 +1,10 @@
 Feature: Watch User'Profile
+
 	As an user
 	I want to watch photos, information of people
 	So i have to login
-Scenario: See photo's and infomation of user
+
+		Scenario: See photo's and infomation of user
 	Given: User is on Home Page
 	When: User click on "profile" symbol
 	And: do nothing
