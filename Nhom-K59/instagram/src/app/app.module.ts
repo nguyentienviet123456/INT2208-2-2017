@@ -24,6 +24,7 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent
   ],
   imports: [
+
     BrowserModule,
     FormsModule,
     HttpModule,

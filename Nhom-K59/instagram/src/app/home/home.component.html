@@ -44,8 +44,19 @@
 						<i>view comment</i>	<br>
 						<a routerLink="/profile" style="color: black"><strong>tien.thinhvu</strong></a> cho chu dep the
 						<br>
+						
+						<div class="your-comment">
+							<ul>
+								<li *ngFor="let comment of comments">
+									{{comment}}
+								</li>
+							</ul>
+						</div>
 						<i>your comment</i> <br>
-						<input style="border: none;">
+						<input style="border: none;"  #newComment
+						(keyup.enter)="addComment(newComment.value)"
+     					(blur)="addComment(newComment.value); newComment.value =''"
+						>
 					</div>
 					<br>
 				</div>
