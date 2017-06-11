@@ -11,7 +11,12 @@ import { ChangeprofileComponent } from './changeprofile/changeprofile.component'
 import { SearchingAndExploreComponent } from './searching-and-explore/searching-and-explore.component';
 import { PostComponent } from './post/post.component';
 import { RegisterComponent } from './register/register.component';
-
+import { UserService } from "app/user.service";
+import { PhotoService } from "app/photo.service"; 
+import { ValidateService} from "app/validate.service";
+import { FlashMessagesModule} from "angular2-flash-messages";
+import { AuthService} from "app/auth.service";
+import {AuthGuard} from 'app/auth.guard';  
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,7 @@ import { RegisterComponent } from './register/register.component';
     RegisterComponent
   ],
   imports: [
-
+    FlashMessagesModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -37,24 +42,29 @@ import { RegisterComponent } from './register/register.component';
       //home
       {
         path: 'home',
-        component: HomeComponent
+        component: HomeComponent,
+        canActivate:[AuthGuard]
       },
       //profile
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        canActivate:[AuthGuard]
       },
       {
         path: 'changeprofile',
-        component: ChangeprofileComponent
+        component: ChangeprofileComponent,
+        canActivate:[AuthGuard]
       },
       {
         path: 'searching-and-explore',
-        component: SearchingAndExploreComponent
+        component: SearchingAndExploreComponent,
+        canActivate:[AuthGuard]
       },
       {
         path: 'post',
-        component: PostComponent
+        component: PostComponent,
+        canActivate:[AuthGuard]
       },
        {
         path: 'register',
@@ -62,7 +72,7 @@ import { RegisterComponent } from './register/register.component';
       }
     ])
   ],
-  providers: [],
+  providers: [UserService,PhotoService,ValidateService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

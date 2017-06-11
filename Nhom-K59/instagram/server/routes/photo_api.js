@@ -11,23 +11,23 @@ mongoose.connect(db, function(err){
 });
 // get users
 router.get('/photos', function(req,res){
-   console.log('get request videos');
+   console.log('get request photos');
    Photo.find({})
    .exec(function(err,photos){
        if(err){
-           console.log("error retrieving videos");
+           console.log("error retrieving photos");
        }else {
            res.json(photos);
        }
    });
 });
-// get single photo
+// get single photo 
 router.get('/photos/:id', function(req,res){
    console.log('get request single photo');
    Photo.findById(req.params.id)
    .exec(function(err,photo){
        if(err){
-           console.log("error retrieving videos");
+           console.log("error retrieving photos");
        }else {
            res.json(photo);
        }
@@ -50,7 +50,7 @@ router.post('/photo',function(req,res){
         }
     });
 });
-// update user into database
+// update photo into database
 router.put('/photo/:id', function(req,res){
     console.log('update a photo');
     Photo.findByIdAndUpdate(req.params.id,
@@ -71,7 +71,7 @@ router.put('/photo/:id', function(req,res){
     }
     );
 });
-// delete user
+// delete photo
 router.delete('/photo/:id', function(req,res){
     console.log('delete photo');
     Photo.findByIdAndRemove(req.params.id, function(err, deletedPhoto){

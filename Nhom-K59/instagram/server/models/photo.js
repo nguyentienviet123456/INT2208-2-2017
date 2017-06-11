@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 //photo Schema
-const photoSChema = new Schema({
+const photoSchema = new Schema({
   
   user_id : String,
   caption : String,
@@ -12,5 +12,5 @@ const photoSChema = new Schema({
 
 });
 
-var photo = module.exports = mongoose.model('photo',photoSChema,'photos');
+var photo = module.exports = mongoose.model('photo',photoSchema,'photos');
 

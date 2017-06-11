@@ -8,18 +8,22 @@ import { Photo } from "app/photo";
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [UserService,PhotoService]
+  inputs : ['photos']
 })
 export class HomeComponent implements OnInit {
 
-  users: Array<User>;
-  photos: Array<Photo>;
- 
-  constructor(private _photoService : PhotoService) { }
+  public photos: any[];
+
+  constructor(private _photoService: PhotoService) { }
 
   ngOnInit() {
     this._photoService.getPhotos()
-    .subscribe(resPhotoData => this.photos = resPhotoData);
+      .subscribe((response: any) => {
+        this.photos = response;
+        console.log(response);
+      }, error => {
+        console.log(error);
+      });
   }
 
 }

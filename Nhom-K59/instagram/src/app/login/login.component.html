@@ -1,79 +1,78 @@
 <div class="container" style="padding: 70px 0px">
-<!-- navbar -->
- <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
-		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="container">
-		        <div class="navbar-header">
-		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+	<!-- navbar -->
+	<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
 		                <span class="sr-only">Toggle navigation</span>
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
 		                <span class="icon-bar"></span>
 		            </button>
-		            <a class="navbar-brand" href="#">Instagram</a>
-		        </div>
-		        <!-- Collect the nav links, forms, and other content for toggling -->
-		        <div class="collapse navbar-collapse" id="navbarCollapse">
-		            <ul class="nav navbar-nav">
-		                <li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">Home</a></li>
-		                <li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
-		                <li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
-		            </ul>
-		        </div>
-		    </div>
-  </nav>
-<!-- /navbar -->
-
-<!-- logo + label -->
-  <div class="row">
-			<h2 class="text-center">Instagram</h2><br>
-			<div class="text-center">
-			<a href="#>"><img src="https://instagram.fhan4-1.fna.fbcdn.net/t51.2885-19/s150x150/15876016_237940189965257_1575679576548311040_a.jpg" alt="download appstore" class="img-circle" width="100" height="100" align="center"></a>
+				<a class="navbar-brand" href="#">Instagram</a>
 			</div>
-	</div> 
-<!-- /logo + label -->
-
-<!-- form -->
-   <div class="row"> 
-		  <div class="col-md-offset-1 col-md-10 col-xs-10 col-xs-offset-1">
-        <form >
-          <div class="form-group">
-            <label>Email</label>
-				    <input type="email" class="form-control" placeholder="Email" name="username">
-            <label>Mật Khẩu</label>
-				    <input type="password" class="form-control" placeholder="Password" name="userpassword">
-          </div>
-		</form>
-          <div class="checkbox">
-            <label><input type="checkbox">REMEMBER</label>
-          </div>
-          <br>
-          <a href="#">FORGET PASSWORD</a>
-          <br>
-
-         <a routerLink="/register">REGISTER</a>
-
-         <a href="#">REGISTER</a>
-
-          <br><br>
-          <div class="button">
-          <a routerLink="/home"><button type="submit" class="btn btn-primary">LOGIN</button></a>
-          </div>
-		  </div>
-		</div> 
-<!-- /form -->
-		<br><br>
-<!-- apple + android -->
-    <div class="row"> 
-			<div class="download">
-			   			 	<div class="row">
-			   			 		<div class="text-center">DOWNLOAD</div>
-			   			 		<div class="col-md-12 col-xs-12 text-center" >
-			   			 			<a href="#>"><img src="https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201701231950" alt="download appstore" class="img-circle" width="100" height="100"></a>
-			   			 			<a href="#"><img src="https://image.freepik.com/free-vector/android-boot-logo_634639.jpg" alt="download playstore" class="img-circle" width="120" height="120"></a>
-			   			 		</div>
-			   				</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">Home</a></li>
+					<li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">About</a></li>
+					<li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">Contact</a></li>
+				</ul>
 			</div>
 		</div>
-<!-- /apple + android -->
+	</nav>
+	<!-- /navbar -->
+
+	<!-- logo + label -->
+	<div class="row">
+		<h2 class="text-center">Instagram</h2><br>
+		<div class="text-center">
+			<a href="#>"><img src="https://instagram.fhan4-1.fna.fbcdn.net/t51.2885-19/s150x150/15876016_237940189965257_1575679576548311040_a.jpg"
+				 alt="download appstore" class="img-circle" width="100" height="100" align="center"></a>
+		</div>
+	</div>
+	<!-- /logo + label -->
+
+	<!-- form -->
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10 col-xs-10 col-xs-offset-1">
+			<form (submit)="onLoginSubmit()">
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" class="form-control" placeholder="name" name="username" [(ngModel)]="username">
+					<label>Mật Khẩu</label>
+					<input type="password" class="form-control" placeholder="Password" name="userpassword" [(ngModel)]="userpassword">
+				</div>
+				<div class="checkbox">
+					<label><input type="checkbox">REMEMBER</label>
+				</div>
+				<br>
+				<a href="#">FORGET PASSWORD</a>
+				<br>
+				<a routerLink="/register">REGISTER</a>
+`				<br><br>
+				<div class="button">
+					<button type="submit" class="btn btn-primary" *ngIf="!authService.loggedIn()">LOGIN</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- /form -->
+	<br><br>
+	<!-- apple + android -->
+	<div class="row">
+		<div class="download">
+			<div class="row">
+				<div class="text-center">DOWNLOAD</div>
+				<div class="col-md-12 col-xs-12 text-center">
+					<a href="#>"><img src="https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201701231950" alt="download appstore"
+						 class="img-circle" width="100" height="100"></a>
+					<a href="#"><img src="https://image.freepik.com/free-vector/android-boot-logo_634639.jpg" alt="download playstore" class="img-circle"
+						 width="120" height="120"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /apple + android -->
 </div>

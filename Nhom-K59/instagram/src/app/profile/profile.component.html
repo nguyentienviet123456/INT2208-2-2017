@@ -1,68 +1,74 @@
-<!-- navbar -->
+<div *ngIf="user">
+	<!-- navbar -->
 	<div class="row" style="border-bottom: 1px solid grey ">
-			  <div class="text-center">
-          <div class="col-md-1 col-xs-1"></div>
-          <div class="col-md-2 col-xs-2">
-             <a routerLink=""><span class="glyphicon glyphicon-home" style="font-size: 25px"></span></a>
-          </div>
-          <div class="col-md-2  col-xs-2">
-             <a routerLink="/searching-and-explore"><span class="glyphicon glyphicon-search " style="font-size: 25px"></span></a>
-          </div>
-          <div class="col-md-2  col-xs-2">
-             <a routerLink="/post"><span class="glyphicon glyphicon-camera" style="font-size: 25px"></span></a>
-          </div>
-          <div class="col-md-2  col-xs-2">
-             <a href="#"><span class="glyphicon glyphicon-heart" style="font-size: 25px"></span></a>
-          </div>
-          <div class="col-md-2  col-xs-2">
-             <a routerLink="/profile"><span class="glyphicon glyphicon-user" style="font-size: 25px"></span></a>
-          </div>
-          <div class="col-md-1 col-xs-1"></div>
-				</div>
+		<div class="text-center">
+			<div class="col-md-1 col-xs-1"></div>
+			<div class="col-md-2 col-xs-2">
+				<a routerLink=""><span class="glyphicon glyphicon-home" style="font-size: 25px"></span></a>
+			</div>
+			<div class="col-md-2  col-xs-2">
+				<a routerLink="/searching-and-explore"><span class="glyphicon glyphicon-search " style="font-size: 25px"></span></a>
+			</div>
+			<div class="col-md-2  col-xs-2">
+				<a routerLink="/post"><span class="glyphicon glyphicon-camera" style="font-size: 25px"></span></a>
+			</div>
+			<div class="col-md-2  col-xs-2">
+				<a href="#"><span class="glyphicon glyphicon-heart" style="font-size: 25px"></span></a>
+			</div>
+			<div class="col-md-2  col-xs-2">
+				<a routerLink="/profile"><span class="glyphicon glyphicon-user" style="font-size: 25px"></span></a>
+			</div>
+			<div class="col-md-1 col-xs-1"></div>
+		</div>
 	</div>
-<!-- /navbar -->
-<!-- container -->
-  <!-- information -->
-	<div class="row" style="padding-top: 80px" >
+	<!-- /navbar -->
+	<!-- container -->
+	<!-- information -->
+	<div class="row" style="padding-top: 80px">
 		<div id="information" class="col-md-12">
 			<div class="col-md-1 col-md-offset-3 col-xs-1 col-md-offset-3 thumbnail" id="image" style="border: none">
-				<img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-1/12931123_839198312892075_3253197630212439499_n.jpg?oh=3457e368ac07a680276af4b2f6ff821a&oe=593C73EC" alt="anhdaidien" class="img-circle" >
+				<img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-1/12931123_839198312892075_3253197630212439499_n.jpg?oh=3457e368ac07a680276af4b2f6ff821a&oe=593C73EC"
+				 alt="anhdaidien" class="img-circle">
 			</div>
 			<div class="col-md-8 col-xs-8" id="information">
 				<div class="row">
-					<span style="font-size: 40px">Chung</span><a routerLink="/changeprofile">. CHANGE PROFILE</a>
-				</div>          
+					<span style="font-size: 40px">{{user.fullname}}</span><a routerLink="/changeprofile">. CHANGE PROFILE</a> <a (click)="onLogoutClick()"
+					 routerLink="#">Logout</a>
+				</div>
 				<div class="row" style="font-size: 20px;padding-top: 10px;padding-bottom: 10px">
 					<div class="col-md-3 col-xs-3"><strong>16</strong> POST</div>
 					<div class="col-md-4 col-xs-4"><strong>79</strong> FOLLOWER</div>
 					<div class="col-md-5 col-md-5">FOLLOWING <strong>43 </strong></div>
 				</div>
 				<div class="row" style="font-size: 20px;padding-top: 40px;padding-bottom: 10px">
-				Nguyen Tien Viet, sinh viên của đại học công nghệ
+					{{user.fullname}}, {{user.personal_information}}
 				</div>
 			</div>
 		</div>
 	</div>
-  <!-- /information -->
+	<!-- /information -->
 
-  <!-- image frame -->
+	<!-- image frame -->
 	<div class="row">
 		<div id="image" style="padding-top: 100px" class="col-md-12">
-			<div class="col-md-2 col-md-offset-3 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
-			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
-			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
+			<div class="col-md-2 col-md-offset-3 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
+			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
+			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
 			<div class="col-md-3 thumbnail" style="border: none;"></div>
 		</div>
 	</div>
 	<div class="row">
 		<div id="image" style="padding-top: 100px" class="col-md-12">
-			<div class="col-md-2 col-md-offset-3 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
-			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
-			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail" ></div>
+			<div class="col-md-2 col-md-offset-3 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
+			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
+			<div class="col-md-2 thumbnail" style="border: none;"><img src="https://cdn.pixabay.com/photo/2015/04/30/20/45/dog-747460_960_720.jpg" alt="..." class="img-thumbnail"></div>
 			<div class="col-md-3 thumbnail" style="border: none;"></div>
 		</div>
 	</div>
 
-  <!-- /image frame -->
-		<div class="row"><div class="text-center" ><a href="#" style="font-size: 20px">view more</a></div></div>
-<!-- /container -->
+	<!-- /image frame -->
+	<div class="row">
+		<div class="text-center"><a href="#" style="font-size: 20px">view more</a></div>
+	</div>
+	<!-- /container -->
+</div>

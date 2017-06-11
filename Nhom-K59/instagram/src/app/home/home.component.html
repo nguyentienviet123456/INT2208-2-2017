@@ -25,7 +25,7 @@
 <!-- container -->
 	<!-- frame of post -->
 	<ul class="nav nav-pills nav-stacked">	
-		<li *ngfor="let photo of photos"> 
+		<li *ngFor="let photo of photos"> 
 			<div class="row" style="padding-top: 30px">
 				<div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="border: 1px solid black;">
 					<div class="row">
@@ -36,7 +36,7 @@
 						<div class="col-md-6 text-right" style="padding-top: 20px"><p class="float-right" >34m</p></div>
 					</div>
 					<div class=" row image thumbnail" style="padding-top: 10px;border: none;">
-						<img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-9/16681600_1278938468867336_6694175607744913231_n.jpg?oh=aa9b08d3805aaa73c3dbe823ba5d814c&oe=59673185"  >
+						<img [src]="photo.image_path" alt="">
 					</div>
 					<div class=" status" style="padding-top: 10px">
 						<strong>1 view</strong> <br>
@@ -68,28 +68,5 @@
 			
 	<!-- /frame of post -->
 
-	<!-- frame of post -->
-			<div class="row" style="padding-top: 30px">
-				<div class="col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2" style="border: 1px solid black;">
-					<div class="row">
-						<div class="col-md-6" style="padding-top: 10px">
-							<img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-9/16681600_1278938468867336_6694175607744913231_n.jpg?oh=aa9b08d3805aaa73c3dbe823ba5d814c&oe=59673185" height="40" width="40" class="img-circle">
-							<a routerLink="/profile" style="color: black">nguyentienviet</a>
-						</div>
-						<div class="col-md-6 text-right" style="padding-top: 20px"><p class="float-right" >34m</p></div>
-					</div>
-					<div class=" row image thumbnail" style="padding-top: 10px;border: none;">
-						<img src="https://scontent.fhan4-1.fna.fbcdn.net/v/t1.0-9/16681600_1278938468867336_6694175607744913231_n.jpg?oh=aa9b08d3805aaa73c3dbe823ba5d814c&oe=59673185"  >
-					</div>
-					<div class=" status" style="padding-top: 10px">
-						<strong>1 view</strong> <br>
-						<a routerLink="/profile" style="color: black"><strong>nguyentienviet</strong></a> que nha toi day
-						</div>
-					<div class="comment" style="padding-top: 10px">
-						<i>view comment</i>	<br>
-						<a routerLink="/profile" style="color: black"><strong>tien.thinhvu</strong></a> cho chu dep the
-					</div>
-				</div>
-			</div>
-	<!-- /frame of post -->
+	
 <!-- container -->	
